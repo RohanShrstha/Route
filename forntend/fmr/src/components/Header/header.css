@@ -1,0 +1,53 @@
+.textColor {
+    color: #000000;
+}
+
+.navbarBgDark {
+    background: #131594;
+}
+
+.navbar-nav .nav-link.active {
+    color: #efef13;
+}
+
+.getBtn:hover,
+.nav-link:hover {
+    color: #EDA72F;
+}
+
+.nav-link {
+    color: #fff;
+}
+
+.getBtn {
+    color: #fff;
+}
+
+.secondnav {
+    background-color: #dfdfdf;
+    color: black;
+}
+
+.topofpage {
+    font-weight: bold;
+}
+
+.icons {
+    font-size: 24px;
+}
+
+.Navvybar {
+    margin: 0 4%;
+}
+
+@media screen and (min-width: 992px) {
+    .sideLine {
+        border-right: none;
+    }
+
+    .iconHeight {
+        height: 46px;
+        width: 46px;
+    }
+
+}

@@ -1,0 +1,456 @@
+/* tensorflow_object_counting_api */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-container {
+  display: flex;
+  background-color: #eeeeee;
+  min-height: 100vh;
+}
+
+.home-photo:hover {
+  box-shadow: 1px 1px 20px #005eff;
+  scale: 0.995;
+}
+
+/* Sidebar */
+.sidebar {
+  background: rgba(51, 157, 218, 0.725);
+  color: black;
+  width: 180px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+}
+
+.top_section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 10px;
+}
+
+.logo {
+  padding-bottom: 15px;
+  font-size: 20px;
+}
+
+
+.routes {
+  margin-top: -10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.link {
+  display: flex;
+  color: rgb(0, 0, 0);
+  gap: 20px;
+  padding: 5px 10px;
+  text-decoration: none;
+  border-right: 4px solid transparent;
+  transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  text-decoration: none;
+}
+
+.link:hover {
+  border-left: 4px solid rgb(0, 59, 141);
+  text-decoration: none;
+  color: #000000;
+  background: rgb(64, 202, 233);
+  transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+
+
+.link_text {
+  white-space: nowrap;
+  font-size: 15px;
+}
+
+.menu {
+  display: flex;
+  color: rgb(0, 0, 0);
+  padding: 5px 10px;
+  border-right: 4px solid transparent;
+  transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  justify-content: space-between;
+}
+
+.menu_item {
+  display: flex;
+  gap: 20px;
+  cursor: pointer;
+}
+
+.menu_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu_container .link {
+  padding-left: 30px;
+}
+
+/* Dashboard  */
+.dashboard-box {
+  text-align: center;
+  padding: 16px 20px 40px;
+  margin: 10px;
+  border-radius: 5px;
+  font-size: 54px;
+  line-height: 30px;
+  border: 2px solid rgb(207, 207, 207);
+  background-color: rgba(202, 202, 201, 0.156);
+}
+
+/*For Table List */
+.admin-table {
+  font-size: 15px;
+}
+
+.admin-view {
+  padding: 2% 16%;
+  min-height: 100vh;
+}
+
+.admin-view h2 {
+  border-left: 10px solid rgba(87, 218, 51, 0.725);
+  padding: 10px 20px;
+  background-image: linear-gradient(to right, rgba(87, 218, 51, 0.282), #eeeeee);
+  width: 50%;
+  font-size: 40px;
+}
+
+.list {
+  padding: 20px 30px;
+  border-radius: 12px;
+  background-color: rgb(255, 255, 255);
+  margin-top: 20px;
+  min-width: 80rem;
+}
+
+.list h3 {
+  padding-bottom: 10px;
+}
+
+.admin-button {
+  margin: 2px;
+  width: 6rem;
+}
+
+.error-message {
+  color: red;
+}
+
+.form-close-btn {
+  margin-top: -40px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Profile */
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 0 solid rgba(0, 0, 0, 0.5);
+  border-radius: .25rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .2);
+}
+
+.card-body {
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 1rem;
+}
+
+/* Booking Button */
+.bookbutton {
+  -webkit-appearance: none;
+  appearance: none;
+  position: relative;
+  border-width: 0;
+  padding: 0px 6px 14px;
+  min-width: 0em;
+  box-sizing: border-box;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+  margin: 8px;
+}
+
+.button-topA,
+.button-topB,
+.button-topC {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 0;
+  padding: 8px 16px;
+  transform: translateY(0);
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 -1px rgba(0, 0, 0, .25);
+  transition-property: transform;
+  transition-duration: .2s;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.bookbutton:active .button-topA,
+.bookbutton:active .button-topB,
+.bookbutton:active .button-topC {
+  transform: translateY(6px);
+}
+
+.button-topA::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  border-radius: 4px;
+  width: 100%;
+  height: 100%;
+  box-sizing: content-box;
+  background-image: radial-gradient(#ffffff, #8a9090);
+  text-align: center;
+  color: #fff;
+  box-shadow: inset 0 0 0px 1px rgba(255, 255, 255, .2), 0 1px 2px 1px rgba(255, 255, 255, .2);
+  transition-property: border-radius, padding, width, transform;
+  transition-duration: .2s;
+}
+
+.button-topB::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  border-radius: 4px;
+  width: 100%;
+  height: 100%;
+  box-sizing: content-box;
+  background-image: radial-gradient(#6ad8b3, #369d8d);
+  text-align: center;
+  color: #fff;
+  box-shadow: inset 0 0 0px 1px rgba(255, 255, 255, .2), 0 1px 2px 1px rgba(255, 255, 255, .2);
+  transition-property: border-radius, padding, width, transform;
+  transition-duration: .2s;
+}
+
+.button-topC::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  border-radius: 4px;
+  width: 100%;
+  height: 100%;
+  box-sizing: content-box;
+  background-image: radial-gradient(#d86a6a, #9d3636);
+  text-align: center;
+  color: #fff;
+  box-shadow: inset 0 0 0px 1px rgba(255, 255, 255, .2), 0 1px 2px 1px rgba(255, 255, 255, .2);
+  transition-property: border-radius, padding, width, transform;
+  transition-duration: .2s;
+}
+
+.bookbutton:active .button-topA::after,
+.bookbutton:active .button-topB::after,
+.bookbutton:active .button-topC::after {
+  border-radius: 6px;
+  padding: 0 2px;
+}
+
+.button-bottomA {
+  position: absolute;
+  z-index: -1;
+  bottom: 4px;
+  left: 4px;
+  border-radius: 8px / 16px 16px 8px 8px;
+  padding-top: 6px;
+  width: calc(100% - 8px);
+  height: calc(100% - 10px);
+  box-sizing: content-box;
+  background-color: #898989;
+  background-image: radial-gradient(4px 8px at 4px calc(100% - 8px), rgba(255, 255, 255, .25), transparent), radial-gradient(4px 8px at calc(100% - 4px) calc(100% - 8px), rgba(255, 255, 255, .25), transparent), radial-gradient(16px at -4px 0, white, transparent), radial-gradient(16px at calc(100% + 4px) 0, white, transparent);
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.5), inset 0 -1px 3px 3px rgba(0, 0, 0, .4);
+  transition-property: border-radius, padding-top;
+  transition-duration: .2s;
+}
+
+.button-bottomB {
+  position: absolute;
+  z-index: -1;
+  bottom: 4px;
+  left: 4px;
+  border-radius: 8px / 16px 16px 8px 8px;
+  padding-top: 6px;
+  width: calc(100% - 8px);
+  height: calc(100% - 10px);
+  box-sizing: content-box;
+  background-color: #38a19d;
+  background-image: radial-gradient(4px 8px at 4px calc(100% - 8px), rgba(255, 255, 255, .25), transparent), radial-gradient(4px 8px at calc(100% - 4px) calc(100% - 8px), rgba(255, 255, 255, .25), transparent), radial-gradient(16px at -4px 0, white, transparent), radial-gradient(16px at calc(100% + 4px) 0, white, transparent);
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.5), inset 0 -1px 3px 3px rgba(0, 0, 0, .4);
+  transition-property: border-radius, padding-top;
+  transition-duration: .2s;
+}
+
+.button-bottomC {
+  position: absolute;
+  z-index: -1;
+  bottom: 4px;
+  left: 4px;
+  border-radius: 8px / 16px 16px 8px 8px;
+  padding-top: 6px;
+  width: calc(100% - 8px);
+  height: calc(100% - 10px);
+  box-sizing: content-box;
+  background-color: #a13838;
+  background-image: radial-gradient(4px 8px at 4px calc(100% - 8px), rgba(255, 255, 255, .25), transparent), radial-gradient(4px 8px at calc(100% - 4px) calc(100% - 8px), rgba(255, 255, 255, .25), transparent), radial-gradient(16px at -4px 0, white, transparent), radial-gradient(16px at calc(100% + 4px) 0, white, transparent);
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.5), inset 0 -1px 3px 3px rgba(0, 0, 0, .4);
+  transition-property: border-radius, padding-top;
+  transition-duration: .2s;
+}
+
+.bookbutton:active .button-bottomA,
+.bookbutton:active .button-bottomB,
+.bookbutton:active .button-bottomC {
+  border-radius: 10px 10px 8px 8px / 8px;
+  padding-top: 0;
+}
+
+.button-base {
+  position: absolute;
+  z-index: -2;
+  top: 4px;
+  left: 0;
+  border-radius: 12px;
+  width: 100%;
+  height: calc(100% - 4px);
+  background-color: rgba(0, 0, 0, .15);
+  box-shadow: 0 1px 1px 0 black, inset 0 2px 2px rgba(0, 0, 0, .25);
+}
+
+.btn-book {
+  width: 180px;
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+  transition: all 0.5s ease-in-out;
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  background: #008be1;
+  color: #ffffff;
+}
+
+.btn-book:hover {
+  box-shadow: 0 0 20px 0px #2e2e2e3a;
+}
+
+.btn-book .icon {
+  position: absolute;
+  height: 40px;
+  width: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+}
+
+.btn-book .text {
+  transform: translateX(55px);
+}
+
+.btn-book:hover .icon {
+  width: 175px;
+}
+
+.btn-book:hover .text {
+  transition: all 0.5s;
+  opacity: 0;
+}
+
+.btn-book:focus {
+  outline: none;
+}
+
+.btn-book:active .icon {
+  transform: scale(0.85);
+}
+
+
+/* Loading screen */
+.box {
+  width: 120px;
+  height: 258px;
+  position: relative;
+  top: 30%;
+  left: 650%;
+
+
+  .shadow {
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    background-color: rgb(29, 29, 29);
+    bottom: 0;
+    border-radius: 100%;
+    transform: scaleX(.8);
+    opacity: .6;
+    animation: shadowScale 1s linear infinite;
+  }
+}
+
+.gravity {
+  animation: bounce 1s cubic-bezier(0.68, 0.35, 0.29, 0.54) infinite;
+}
+
+.ball {
+  width: 100px;
+  height: 100px;
+  background-image: url('https://cdn2.iconfinder.com/data/icons/activity-5/50/26BD-soccer-ball-128.png');
+  background-size: cover;
+  animation: roll .7s linear infinite;
+}
+
+@keyframes roll {
+  0% {}
+
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
+@keyframes bounce {
+  0% {}
+
+  50% {
+    transform: translateY(150px)
+  }
+
+  100% {}
+}
+
+@keyframes shadowScale {
+  0% {}
+
+  50% {
+    transform: scaleX(1);
+    opacity: .8;
+  }
+
+  100% {}
+}
